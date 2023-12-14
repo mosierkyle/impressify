@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './styles/App.css';
-import General from '/Users/kylemosier/repos/CV-application/src/components/General.jsx';
+import General from './components/General';
+import GeneralTemplate from './components/generalTemplate';
 
 function App() {
   const [generalFormData, setGeneralFormData] = useState({
@@ -20,11 +21,7 @@ function App() {
       </div>
 
       <div className="resume">
-        <h2>Another Component</h2>
-        <p>Full Name: {generalFormData.fullName}</p>
-        <p>Email: {generalFormData.email}</p>
-        <p>Phone: {generalFormData.phone}</p>
-        <p>Address: {generalFormData.address}</p>
+        <GeneralTemplate formData={generalFormData}></GeneralTemplate>
       </div>
     </div>
   );

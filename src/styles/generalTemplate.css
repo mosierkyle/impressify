@@ -1,0 +1,28 @@
+.general-template {
+  height: 75px;
+  display: flex;
+  padding: 36px 24px;
+  flex-direction: column;
+  width: 100%;
+  color: white;
+  background-color: gray;
+  gap: 14px;
+}
+
+.fullname {
+  text-align: center;
+  margin: 0;
+  font-size: 32px;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 16px;
+}
+
+.info p {
+  margin: 0;
+  text-align: center;
+}
