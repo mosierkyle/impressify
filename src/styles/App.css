@@ -1,0 +1,17 @@
+.app {
+  padding: 20px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.edit {
+  display: flex;
+  justify-content: center;
+}
+
+.resume {
+  display: flex;
+  justify-content: center;
+}
