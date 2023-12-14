@@ -1,17 +1,26 @@
 .app {
-  padding: 20px;
+  padding: 25px;
   margin: 0;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  height: 95vh;
+  max-width: 1500px;
+  min-width: 750px;
 }
 
 .edit {
   display: flex;
-  justify-content: center;
+  justify-content: end;
+  width: max(20%, 400px);
 }
 
 .resume {
   display: flex;
   justify-content: center;
+  background-color: white;
+  padding: 20px;
+  /* align-items: center;
+  vertical-align: center; */
+  width: max(50%, 700px);
 }

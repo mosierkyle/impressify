@@ -6,6 +6,7 @@
   padding: 20px;
   border-radius: 10px;
   /* box-shadow: 0 0px 15px rgba(0, 0, 0, 0.1); */
+  height: fit-content;
 }
 
 .header-group {
@@ -74,3 +75,14 @@
   cursor: pointer;
   width: fit-content;
 }
+
+/* .editBtn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.editSVG {
+  height: 0px;
+  width: 3px;
+  transform: scale(0.75);
+} */

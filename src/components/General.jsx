@@ -1,4 +1,5 @@
 import { useState } from 'react';
+// import { Helmet } from 'react-helmet';
 import '../styles/General.css';
 
 function General({ formData, setFormData }) {
@@ -53,6 +54,12 @@ function General({ formData, setFormData }) {
 
   return (
     <div className="general">
+      {/* <Helmet>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        />
+      </Helmet> */}
       <div className="header-group">
         <h2 className="header">General Information</h2>
         {downUp == 0 ? (
@@ -114,8 +121,9 @@ function General({ formData, setFormData }) {
               </button>
             )}
             {editSave == 1 && (
-              <button className="button" onClick={handleEdit}>
+              <button className="button editBtn" onClick={handleEdit}>
                 Edit
+                {/* <span className="editSVG material-symbols-outlined">edit</span> */}
               </button>
             )}
           </div>
