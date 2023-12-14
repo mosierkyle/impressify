@@ -1,0 +1,56 @@
+.education-template {
+  width: calc(100% - 112px);
+  padding: 0 56px;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.education-header {
+  font-weight: 500px;
+  color: gray;
+  background-color: #f3f4f6;
+  width: 100%;
+  text-align: center;
+  padding: 4px 0;
+  border-radius: 2px;
+}
+
+.education-header h3 {
+  margin: 0;
+}
+
+.education-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.school {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.school p {
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.school-name {
+  font-weight: bold;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+.right p {
+  text-align: end;
+}

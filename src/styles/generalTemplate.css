@@ -3,7 +3,7 @@
   display: flex;
   padding: 36px 24px;
   flex-direction: column;
-  width: 100%;
+  width: calc(100% - 48px);
   color: white;
   background-color: gray;
   gap: 14px;

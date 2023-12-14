@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './styles/App.css';
 import General from './components/General';
-import GeneralTemplate from './components/generalTemplate';
+import GeneralTemplate from './components/Templates/generalTemplate';
+import EducationTemplate from './components/Templates/EducationTemplate';
 
 function App() {
   const [generalFormData, setGeneralFormData] = useState({
@@ -22,6 +23,7 @@ function App() {
 
       <div className="resume">
         <GeneralTemplate formData={generalFormData}></GeneralTemplate>
+        <EducationTemplate></EducationTemplate>
       </div>
     </div>
   );

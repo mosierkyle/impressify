@@ -17,9 +17,8 @@
 
 .resume {
   display: flex;
-  justify-content: center;
   background-color: white;
-  /* align-items: center;
-  vertical-align: center; */
   width: max(50%, 700px);
+  flex-direction: column;
+  align-items: center;
 }
