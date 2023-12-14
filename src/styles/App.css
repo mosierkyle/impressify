@@ -3,22 +3,26 @@
   margin: 0;
   display: flex;
   justify-content: center;
-  gap: 25px;
-  height: 95vh;
+  gap: 75px;
+  height: fit-content;
   max-width: 1500px;
   min-width: 750px;
 }
 
 .edit {
   display: flex;
-  justify-content: end;
-  width: max(20%, 400px);
+  justify-content: start;
+  width: max(20%, 350px);
+  flex-direction: column;
+  gap: 25px;
 }
 
 .resume {
   display: flex;
   background-color: white;
-  width: max(50%, 700px);
+  width: max(50%, 720px);
   flex-direction: column;
   align-items: center;
+  height: 1000px;
+  border-radius: 2px;
 }

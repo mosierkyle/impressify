@@ -3,6 +3,7 @@ import './styles/App.css';
 import General from './components/General';
 import GeneralTemplate from './components/Templates/generalTemplate';
 import EducationTemplate from './components/Templates/EducationTemplate';
+import Education from './components/Education';
 
 function App() {
   const [generalFormData, setGeneralFormData] = useState({
@@ -12,6 +13,18 @@ function App() {
     address: '',
   });
 
+  const [educationFormData, setEducationFormData] = useState({
+    education: [
+      {
+        name: 'California Polytechnic State University',
+        major: 'Business Administration - Information Systems',
+        start: 'September 2020',
+        end: 'June 2024',
+        location: 'San Luis Obispo, CA',
+      },
+    ],
+  });
+
   return (
     <div className="app">
       <div className="edit">
@@ -19,11 +32,15 @@ function App() {
           formData={generalFormData}
           setFormData={setGeneralFormData}
         ></General>
+        <Education
+          formData={educationFormData}
+          setFormData={setEducationFormData}
+        ></Education>
       </div>
 
       <div className="resume">
         <GeneralTemplate formData={generalFormData}></GeneralTemplate>
-        <EducationTemplate></EducationTemplate>
+        <EducationTemplate formData={educationFormData}></EducationTemplate>
       </div>
     </div>
   );
