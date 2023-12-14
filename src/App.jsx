@@ -3,27 +3,29 @@ import './styles/App.css';
 import General from '/Users/kylemosier/repos/CV-application/src/components/General.jsx';
 
 function App() {
-  let [editSaveGeneral, setEditSaveGeneral] = useState('0');
-
-  function handleSaveGeneral(e) {
-    setEditSaveGeneral((editSaveGeneral += 1));
-  }
-
-  function handleEditGeneral(e) {
-    setEditSaveGeneral((editSaveGeneral -= 1));
-  }
+  const [generalFormData, setGeneralFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    address: '',
+  });
 
   return (
     <div className="app">
       <div className="edit">
         <General
-          editSave={editSaveGeneral}
-          handleSave={handleSaveGeneral}
-          handleEdit={handleEditGeneral}
+          formData={generalFormData}
+          setFormData={setGeneralFormData}
         ></General>
       </div>
 
-      <div className="resume">random words</div>
+      <div className="resume">
+        <h2>Another Component</h2>
+        <p>Full Name: {generalFormData.fullName}</p>
+        <p>Email: {generalFormData.email}</p>
+        <p>Phone: {generalFormData.phone}</p>
+        <p>Address: {generalFormData.address}</p>
+      </div>
     </div>
   );
 }

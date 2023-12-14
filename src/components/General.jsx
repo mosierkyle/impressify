@@ -1,8 +1,51 @@
 import { useState } from 'react';
 import '../styles/General.css';
 
-function General({ handleSave, handleEdit, editSave }) {
+function General({ formData, setFormData }) {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [address, setAddress] = useState('');
+  let [editSave, setEditSave] = useState('0');
   let [downUp, setDownUp] = useState(0);
+
+  function handleFullName(e) {
+    setFullName(e.target.value);
+  }
+
+  function handleEmail(e) {
+    setEmail(e.target.value);
+  }
+
+  function handlePhone(e) {
+    setPhone(e.target.value);
+  }
+
+  function handleAddress(e) {
+    setAddress(e.target.value);
+  }
+
+  function handleSave() {
+    setEditSave((editSave += 1));
+    setFormData({
+      fullName: fullName,
+      email: email,
+      phone: phone,
+      address: address,
+    });
+    setFullName('');
+    setEmail('');
+    setPhone('');
+    setAddress('');
+  }
+
+  function handleEdit() {
+    setEditSave((editSave -= 1));
+    setFullName(formData.fullName);
+    setEmail(formData.email);
+    setPhone(formData.phone);
+    setAddress(formData.address);
+  }
 
   function handleDownUp(e) {
     downUp == 1 ? setDownUp(downUp - 1) : setDownUp(downUp + 1);
@@ -30,19 +73,39 @@ function General({ handleSave, handleEdit, editSave }) {
         <form className="form" onSubmit={(e) => e.preventDefault()}>
           <div className="input-group">
             <label className="input-label">Full Name</label>
-            <input className="input" placeholder="First name" />
+            <input
+              className="input"
+              placeholder="First name"
+              value={fullName}
+              onChange={handleFullName}
+            />
           </div>
           <div className="input-group">
             <label className="input-label">Email</label>
-            <input className="input" placeholder="Enter email" />
+            <input
+              className="input"
+              placeholder="Enter email"
+              value={email}
+              onChange={handleEmail}
+            />
           </div>
           <div className="input-group">
             <label className="input-label">Phone Number</label>
-            <input className="input" placeholder="Enter phone number" />
+            <input
+              className="input"
+              placeholder="Enter phone number"
+              value={phone}
+              onChange={handlePhone}
+            />
           </div>
           <div className="input-group">
             <label className="input-label">Address</label>
-            <input placeholder="City, State/Providence" className="input" />
+            <input
+              placeholder="City, State/Providence"
+              className="input"
+              value={address}
+              onChange={handleAddress}
+            />
           </div>
           <div className="button-div">
             {editSave == 0 && (
