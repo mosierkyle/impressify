@@ -51,11 +51,11 @@
   margin-top: 10px;
   border: none;
   padding: 10px 20px;
-  background-color: #f08080;
   color: white;
-  border-radius: 25px;
-  font-weight: 400;
-  font-size: 16px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  background-color: black;
 }
 
 .button-div {
@@ -65,7 +65,7 @@
 
 .button:hover {
   cursor: pointer;
-  background-color: rgba(240, 128, 128, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .expand-icon {

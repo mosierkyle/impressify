@@ -10,21 +10,19 @@ export default function GeneralTemplate({ formData }) {
           crossorigin="anonymous"
         ></script>
       </Helmet>
-      <h1 className="fullname"> John Doe{formData.fullName}</h1>
+      <h1 className="fullname">{formData.fullName}</h1>
       <div className="info">
         <p>
-          {' '}
-          <i className="fa-solid fa-envelope svg"></i>
-          johndoe@gmail.com
+          {formData.email && <i className="fa-solid fa-envelope svg"></i>}
           {formData.email}
         </p>
         <p>
-          <i className="fa-solid fa-phone svg"></i>
-          (360)222-333 {formData.phone}
+          {formData.phone && <i className="fa-solid fa-phone svg"></i>}
+          {formData.phone}
         </p>
         <p>
-          <i className="fa-solid fa-location-dot svg"></i>
-          Random NW 99th ave{formData.address}
+          {formData.address && <i className="fa-solid fa-location-dot svg"></i>}
+          {formData.address}
         </p>
       </div>
     </div>

@@ -66,7 +66,12 @@ export default function Education({ formData, setFormData }) {
             );
           })}
           <div className="add-education">
-            <button className="add-education-button">+ Education</button>
+            <button
+              className="add-education-button"
+              onClick={() => handleEdit(formData.education.length)}
+            >
+              + Education
+            </button>
           </div>
         </div>
       )}

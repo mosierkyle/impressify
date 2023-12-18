@@ -9,19 +9,29 @@ export default function EducationForm({
   currentSchool,
 }) {
   const [schoolName, setSchoolName] = useState(
-    currentSchool >= 0 ? formData.education[currentSchool].name : ''
+    currentSchool != formData.education.length
+      ? formData.education[currentSchool].name
+      : ''
   );
   const [schoolMajor, setSchoolMajor] = useState(
-    currentSchool >= 0 ? formData.education[currentSchool].major : ''
+    currentSchool != formData.education.length
+      ? formData.education[currentSchool].major
+      : ''
   );
   const [schoolStart, setSchoolStart] = useState(
-    currentSchool >= 0 ? formData.education[currentSchool].start : ''
+    currentSchool != formData.education.length
+      ? formData.education[currentSchool].start
+      : ''
   );
   const [schoolEnd, setSchoolEnd] = useState(
-    currentSchool >= 0 ? formData.education[currentSchool].end : ''
+    currentSchool != formData.education.length
+      ? formData.education[currentSchool].end
+      : ''
   );
   const [schoolLocation, setSchoolLocation] = useState(
-    currentSchool >= 0 ? formData.education[currentSchool].location : ''
+    currentSchool != formData.education.length
+      ? formData.education[currentSchool].location
+      : ''
   );
 
   function handleSchoolName(e) {
@@ -44,17 +54,15 @@ export default function EducationForm({
   }
 
   function handleSave() {
-    if (currentSchool) {
-      const updatedEducation = [...formData.education];
-      updatedEducation[currentSchool] = {
-        name: schoolName,
-        major: schoolMajor,
-        start: schoolStart,
-        end: schoolEnd,
-        location: schoolLocation,
-      };
-      setFormData({ ...formData, education: updatedEducation });
-    }
+    const updatedEducation = [...formData.education];
+    updatedEducation[currentSchool] = {
+      name: schoolName,
+      major: schoolMajor,
+      start: schoolStart,
+      end: schoolEnd,
+      location: schoolLocation,
+    };
+    setFormData({ ...formData, education: updatedEducation });
     setSchoolName('');
     setSchoolMajor('');
     setSchoolEnd('');

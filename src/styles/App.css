@@ -3,7 +3,7 @@
   margin: 0;
   display: flex;
   justify-content: center;
-  gap: 75px;
+  gap: 65px;
   height: fit-content;
   max-width: 1500px;
   min-width: 750px;
@@ -14,7 +14,7 @@
   justify-content: start;
   width: max(20%, 350px);
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
 }
 
 .resume {

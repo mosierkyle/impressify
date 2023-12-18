@@ -28,6 +28,7 @@ function General({ formData, setFormData }) {
 
   function handleSave() {
     setEditSave((editSave += 1));
+    setDownUp((downUp += 1));
     setFormData({
       fullName: fullName,
       email: email,

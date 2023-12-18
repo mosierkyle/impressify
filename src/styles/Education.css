@@ -12,8 +12,9 @@
   width: 100%;
   height: fit-content;
   padding: 20px;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  /* border-top-right-radius: 10px;
+  border-top-left-radius: 10px; */
+  border-radius: 10px;
 }
 
 .header {
@@ -52,11 +53,11 @@
   margin-top: 10px;
   border: none;
   padding: 10px 20px;
-  background-color: #f08080;
   color: white;
-  border-radius: 25px;
-  font-weight: 400;
-  font-size: 16px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  background-color: black;
 }
 
 .button-div {
@@ -66,7 +67,7 @@
 
 .button:hover {
   cursor: pointer;
-  background-color: rgba(240, 128, 128, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .expand-icon {
@@ -90,7 +91,6 @@
 
 .editSchool {
   margin: 0;
-  font-size: 0.9rem;
 }
 
 .educations {
@@ -103,6 +103,7 @@
   padding: 20px;
   margin-top: 5px;
   align-items: center;
+  border-radius: 10px;
 }
 
 .school-title {
@@ -119,8 +120,9 @@
   padding: 20px;
   margin-top: 5px;
   align-items: center;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  /* border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; */
+  border-radius: 10px;
 }
 
 .add-education-button {
