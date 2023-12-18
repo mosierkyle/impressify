@@ -9,7 +9,7 @@ export default function EducationTemplate({ formData }) {
       <div className="education-content">
         {formData.education.map((school) => {
           return (
-            <div className="school">
+            <div key={school.name} className="school">
               <div className="left">
                 <p className="school-name">{school.name}</p>
                 <p className="study">{school.major}</p>

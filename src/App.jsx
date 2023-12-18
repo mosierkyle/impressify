@@ -22,6 +22,13 @@ function App() {
         end: 'June 2024',
         location: 'San Luis Obispo, CA',
       },
+      {
+        name: 'UW',
+        major: 'NOT Business Administration - Information Systems',
+        start: 'Not eptember 2020',
+        end: 'Not June 2024',
+        location: 'NOt San Luis Obispo, CA',
+      },
     ],
   });
 

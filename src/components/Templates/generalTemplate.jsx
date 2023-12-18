@@ -10,21 +10,21 @@ export default function GeneralTemplate({ formData }) {
           crossorigin="anonymous"
         ></script>
       </Helmet>
-      <h1 className="fullname"> Kyle Mosier{formData.fullName}</h1>
+      <h1 className="fullname"> John Doe{formData.fullName}</h1>
       <div className="info">
         <p>
           {' '}
           <i className="fa-solid fa-envelope svg"></i>
-          mosierkyle@gmail.com
+          johndoe@gmail.com
           {formData.email}
         </p>
         <p>
           <i className="fa-solid fa-phone svg"></i>
-          (360)597-8103 {formData.phone}
+          (360)222-333 {formData.phone}
         </p>
         <p>
           <i className="fa-solid fa-location-dot svg"></i>
-          5908 NW 38th ave #217{formData.address}
+          Random NW 99th ave{formData.address}
         </p>
       </div>
     </div>

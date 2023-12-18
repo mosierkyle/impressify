@@ -1,53 +1,33 @@
 import { useState } from 'react';
-// import { Helmet } from 'react-helmet';
 import '../styles/Education.css';
+import EducationForm from './Forms/EducationForm';
 
 export default function Education({ formData, setFormData }) {
-  const [schoolName, setSchoolName] = useState('');
-  const [schoolMajor, setSchoolMajor] = useState('');
-  const [schoolStart, setSchoolStart] = useState('');
-  const [schoolEnd, setSchoolEnd] = useState('');
-  const [schoolLocation, setSchoolLocation] = useState('');
-  const [schools, setSchools] = useState([]);
-  let [editSave, setEditSave] = useState('0');
-  let [downUp, setDownUp] = useState(0);
+  let [downUp, setDownUp] = useState({ form: 0, schools: 0 });
+  let [currentSchool, setCurrentSchool] = useState('');
 
-  function handleSchoolName(e) {
-    setSchoolName(e.target.value);
+  function handleEdit(index) {
+    setCurrentSchool(index);
+    downUp.form == 1
+      ? setDownUp({ schools: downUp.schools + 1, form: downUp.form - 1 })
+      : setDownUp({ schools: downUp.schools - 1, form: downUp.form + 1 });
   }
 
-  function handleSchoolMajor(e) {
-    setSchoolMajor(e.target.value);
-  }
-
-  function handleSchoolStart(e) {
-    setSchoolStart(e.target.value);
-  }
-
-  function handleSchoolEnd(e) {
-    setSchoolEnd(e.target.value);
-  }
-  function handleSchoolLocation(e) {
-    setSchoolLocation(e.target.value);
-  }
-
-  function handleSave() {
-    setEditSave((editSave += 1));
-  }
-
-  function handleEdit() {
-    setEditSave((editSave -= 1));
-  }
-
-  function handleDownUp(e) {
-    downUp == 1 ? setDownUp(downUp - 1) : setDownUp(downUp + 1);
+  function handleDownUp() {
+    if (downUp.schools == 0 && downUp.form == 1) {
+      setDownUp({ ...downUp, form: downUp.form - 1 });
+    } else if (downUp.schools == 0 && downUp.form == 0) {
+      setDownUp({ ...downUp, schools: downUp.schools + 1 });
+    } else if (downUp.schools == 1 && downUp.form == 0) {
+      setDownUp({ ...downUp, schools: downUp.schools - 1 });
+    }
   }
 
   return (
-    <div className="general">
-      <div className="header-group">
+    <div className="education">
+      <div className="education-header-group">
         <h2 className="header">Education</h2>
-        {downUp == 0 ? (
+        {downUp.schools == 1 || downUp.form == 1 ? (
           <img
             src="https://rmathr.github.io/cv-project/d529ba3bd8a0c3f53ac7.png"
             className="expand-icon"
@@ -61,66 +41,34 @@ export default function Education({ formData, setFormData }) {
           />
         )}
       </div>
-      {downUp == 0 && (
-        <form className="form" onSubmit={(e) => e.preventDefault()}>
-          <div className="input-group">
-            <label className="input-label">School</label>
-            <input
-              className="input"
-              placeholder="Enter School / University"
-              value={schoolName}
-              onChange={handleSchoolName}
-            />
+      {downUp.form == 1 && (
+        <EducationForm
+          formData={formData}
+          setFormData={setFormData}
+          downUp={downUp}
+          setDownUp={setDownUp}
+          currentSchool={currentSchool}
+        ></EducationForm>
+      )}
+      {downUp.schools == 1 && (
+        <div className="education-content">
+          {formData.education.map((school, index) => {
+            return (
+              <div key={school.name} className="educations">
+                <h5 className="school-title">{school.name}</h5>
+                <button
+                  className="button editBtn editSchool"
+                  onClick={() => handleEdit(index)}
+                >
+                  Edit
+                </button>
+              </div>
+            );
+          })}
+          <div className="add-education">
+            <button className="add-education-button">+ Education</button>
           </div>
-          <div className="input-group">
-            <label className="input-label">Degree</label>
-            <input
-              className="input"
-              placeholder="Enter Degree / Field of Study"
-              value={schoolMajor}
-              onChange={handleSchoolMajor}
-            />
-          </div>
-          <div className="input-group">
-            <label className="input-label">Start Date</label>
-            <input
-              className="input"
-              placeholder="Enter Start Date"
-              value={schoolStart}
-              onChange={handleSchoolStart}
-            />
-          </div>
-          <div className="input-group">
-            <label className="input-label">End Date</label>
-            <input
-              placeholder="Enter End Date"
-              className="input"
-              value={schoolEnd}
-              onChange={handleSchoolEnd}
-            />
-          </div>
-          <div className="input-group">
-            <label className="input-label">Location</label>
-            <input
-              placeholder="Enter Location"
-              className="input"
-              value={schoolLocation}
-              onChange={handleSchoolLocation}
-            />
-          </div>
-          <div className="button-div">
-            {editSave == 0 && (
-              <button className="button" onClick={handleSave}>
-                Save
-              </button>
-            )}
-            {editSave == 1 && (
-              <button className="button editBtn" onClick={handleEdit}>
-                Edit
-              </button>
-            )}
-          </div>
-        </form>
+        </div>
       )}
     </div>
   );

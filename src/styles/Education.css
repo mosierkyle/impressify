@@ -1,18 +1,19 @@
-.general {
+.education {
   display: flex;
-  background-color: white;
-  width: 100%;
   flex-direction: column;
-  padding: 20px;
-  border-radius: 10px;
   /* box-shadow: 0 0px 15px rgba(0, 0, 0, 0.1); */
-  height: fit-content;
 }
 
-.header-group {
+.education-header-group {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: white;
+  width: 100%;
+  height: fit-content;
+  padding: 20px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 .header {
@@ -86,3 +87,53 @@
     width: 3px;
     transform: scale(0.75);
   } */
+
+.editSchool {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.educations {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  width: 100%;
+  height: fit-content;
+  padding: 20px;
+  margin-top: 5px;
+  align-items: center;
+}
+
+.school-title {
+  margin: 0;
+}
+
+.add-education {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: white;
+  width: 100%;
+  height: fit-content;
+  padding: 20px;
+  margin-top: 5px;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.add-education-button {
+  border: none;
+  background-color: gray;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 25px;
+}
+
+.education-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 0;
+}
