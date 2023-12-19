@@ -3,18 +3,18 @@ import '/Users/kylemosier/repos/CV-application/src/styles/experienceTemplate.css
 export default function ExperienceTemplate({ formData }) {
   return (
     <div className="experience-template">
-      {formData.experiences.length > 0 && (
+      {formData.experience.length > 0 && (
         <div className="experience-header">
-          <h3>Education</h3>
+          <h3>Experience</h3>
         </div>
       )}
       <div className="experience-template-content">
-        {formData.experiences.map((experience) => {
+        {formData.experience.map((experience) => {
           return (
-            <div key={experience.role} className="experience">
+            <div key={experience.role} className="experience-unit">
               <div className="left">
                 <p className="role">{experience.role}</p>
-                <p className="company">{experience.company}</p>
+                <em className="company">{experience.company}</em>
                 <p className="details">{experience.details}</p>
               </div>
               <div className="right">

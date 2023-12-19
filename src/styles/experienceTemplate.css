@@ -26,9 +26,11 @@
   margin-top: 20px;
 }
 
-.experience {
+.experience-unit {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  font-size: 14px;
+  gap: 10px;
 }
 
 .role p {
@@ -40,6 +42,14 @@
 .left {
   display: flex;
   flex-direction: column;
+}
+
+.left p {
+  margin: 0;
+}
+
+.right p {
+  margin: 0;
 }
 
 .role {
