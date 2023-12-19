@@ -1,42 +1,48 @@
 import { useState } from 'react';
-import '../styles/Education.css';
+import '../styles/Experience.css';
 import ExperienceForm from './Forms/ExperienceForm';
 import { Helmet } from 'react-helmet';
 
-export default function Education({ formData, setFormData }) {
-  let [downUp, setDownUp] = useState({ form: 0, schools: 0 });
-  let [currentSchool, setCurrentSchool] = useState('');
+export default function Experience({ formData, setFormData }) {
+  let [downUp, setDownUp] = useState({ form: 0, experiences: 1 });
+  let [currentExperience, setCurrentExperience] = useState('');
 
   function handleEdit(index) {
-    setCurrentSchool(index);
+    setCurrentExperience(index);
     downUp.form == 1
-      ? setDownUp({ schools: downUp.schools + 1, form: downUp.form - 1 })
-      : setDownUp({ schools: downUp.schools - 1, form: downUp.form + 1 });
+      ? setDownUp({
+          experiences: downUp.experiences + 1,
+          form: downUp.form - 1,
+        })
+      : setDownUp({
+          experiences: downUp.experiences - 1,
+          form: downUp.form + 1,
+        });
   }
 
   function handleDownUp() {
-    if (downUp.schools == 0 && downUp.form == 1) {
+    if (downUp.experiences == 0 && downUp.form == 1) {
       setDownUp({ ...downUp, form: downUp.form - 1 });
-    } else if (downUp.schools == 0 && downUp.form == 0) {
-      setDownUp({ ...downUp, schools: downUp.schools + 1 });
-    } else if (downUp.schools == 1 && downUp.form == 0) {
-      setDownUp({ ...downUp, schools: downUp.schools - 1 });
+    } else if (downUp.experiences == 0 && downUp.form == 0) {
+      setDownUp({ ...downUp, experiences: downUp.experiences + 1 });
+    } else if (downUp.experiences == 1 && downUp.form == 0) {
+      setDownUp({ ...downUp, experiences: downUp.experiences - 1 });
     }
   }
 
   return (
-    <div className="education">
+    <div className="experience">
       <Helmet>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
         />
       </Helmet>
-      <div className="education-header-group">
+      <div className="experience-header-group">
         <h2 className="header">
-          <i className="icon fa-solid fa-graduation-cap"></i> Education
+          <i class="fa-solid fa-briefcase"></i> Experience
         </h2>
-        {downUp.schools == 1 || downUp.form == 1 ? (
+        {downUp.experiences == 1 || downUp.form == 1 ? (
           <img
             src="https://rmathr.github.io/cv-project/d529ba3bd8a0c3f53ac7.png"
             className="expand-icon"
@@ -51,32 +57,32 @@ export default function Education({ formData, setFormData }) {
         )}
       </div>
       {downUp.form == 1 && (
-        <EducationForm
+        <ExperienceForm
           formData={formData}
           setFormData={setFormData}
           downUp={downUp}
           setDownUp={setDownUp}
-          currentSchool={currentSchool}
-        ></EducationForm>
+          currentExperience={currentExperience}
+        ></ExperienceForm>
       )}
-      {downUp.schools == 1 && (
-        <div className="education-content">
-          {formData.education.map((school, index) => {
+      {downUp.experiences == 1 && (
+        <div className="experience-content">
+          {formData.experience.map((experience, index) => {
             return (
-              <div key={school.name} className="educations">
-                <h5 className="school-title">{school.name}</h5>
+              <div key={experience.role} className="experiences">
+                <h5 className="experience-title">{experience.role}</h5>
                 <button className="editBtn" onClick={() => handleEdit(index)}>
                   <i className="fa-sharp fa-solid fa-pen-to-square"></i>
                 </button>
               </div>
             );
           })}
-          <div className="add-education">
+          <div className="add-experience">
             <button
-              className="add-education-button"
-              onClick={() => handleEdit(formData.education.length)}
+              className="add-experience-button"
+              onClick={() => handleEdit(formData.experience.length)}
             >
-              + Education
+              + Experience
             </button>
           </div>
         </div>

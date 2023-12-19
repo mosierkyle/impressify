@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '/Users/kylemosier/repos/CV-application/src/styles/EducationForm.css';
+import '/Users/kylemosier/repos/CV-application/src/styles/ExperienceForm.css';
 
 export default function EducationForm({
   formData,

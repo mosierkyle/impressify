@@ -4,6 +4,7 @@ import General from './components/General';
 import GeneralTemplate from './components/Templates/generalTemplate';
 import EducationTemplate from './components/Templates/EducationTemplate';
 import Education from './components/Education';
+import Experience from './components/Experience';
 
 function App() {
   const [generalFormData, setGeneralFormData] = useState({
@@ -33,7 +34,7 @@ function App() {
   });
 
   const [experienceFormData, setExperienceFormData] = useState({
-    education: [
+    experience: [
       {
         role: 'Front-End Web Developer',
         company: 'Bixby Agency',
@@ -66,6 +67,10 @@ function App() {
           formData={educationFormData}
           setFormData={setEducationFormData}
         ></Education>
+        <Experience
+          formData={experienceFormData}
+          setFormData={setExperienceFormData}
+        ></Experience>
       </div>
 
       <div className="resume">
