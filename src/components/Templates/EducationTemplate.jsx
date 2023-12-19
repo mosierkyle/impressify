@@ -3,10 +3,12 @@ import '/Users/kylemosier/repos/CV-application/src/styles/educationTemplate.css'
 export default function EducationTemplate({ formData }) {
   return (
     <div className="education-template">
-      <div className="education-header">
-        <h3>Education</h3>
-      </div>
-      <div className="education-content">
+      {formData.education.length > 0 && (
+        <div className="education-header">
+          <h3>Education</h3>
+        </div>
+      )}
+      <div className="education-template-content">
         {formData.education.map((school) => {
           return (
             <div key={school.name} className="school">
@@ -15,10 +17,10 @@ export default function EducationTemplate({ formData }) {
                 <p className="study">{school.major}</p>
               </div>
               <div className="right">
+                <p className="location">{school.location}</p>
                 <p className="time">
                   {school.start} - {school.end}
                 </p>
-                <p className="location">{school.location}</p>
               </div>
             </div>
           );

@@ -75,6 +75,21 @@ export default function EducationForm({
     setDownUp({ ...downUp, form: downUp.form - 1 });
   }
 
+  function handleDelete() {
+    if (currentSchool != 0) {
+      const updatedEducation = [...formData.education];
+      setFormData({
+        ...formData,
+        education: updatedEducation.splice(currentSchool, 1),
+      });
+    } else {
+      setFormData({
+        education: [],
+      });
+    }
+    setDownUp({ ...downUp, form: downUp.form - 1 });
+  }
+
   return (
     <form className="education-form" onSubmit={(e) => e.preventDefault()}>
       <div className="input-group">
@@ -123,12 +138,17 @@ export default function EducationForm({
         />
       </div>
       <div className="button-div">
-        <button className="button" onClick={handleSave}>
-          Save
+        <button className="deleteBtn" onClick={handleDelete}>
+          <i className="fa-solid fa-trash"></i>
         </button>
-        <button className="button" onClick={handleCancel}>
-          Cancel
-        </button>
+        <div className="rightButtons">
+          <button className="button" onClick={handleCancel}>
+            Cancel
+          </button>
+          <button className="button" onClick={handleSave}>
+            Save
+          </button>
+        </div>
       </div>
     </form>
   );

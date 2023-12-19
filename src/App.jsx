@@ -7,10 +7,10 @@ import Education from './components/Education';
 
 function App() {
   const [generalFormData, setGeneralFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    address: '',
+    fullName: 'Kyle Mosier',
+    email: 'mosierkyle@gmail.com',
+    phone: '3605978103',
+    address: '5908 NW 38th Ave #217',
   });
 
   const [educationFormData, setEducationFormData] = useState({

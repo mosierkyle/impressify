@@ -19,11 +19,11 @@
   margin: 0;
 }
 
-.education-content {
+.education-template-content {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .school {
@@ -52,5 +52,9 @@
 }
 
 .right p {
-  text-align: end;
+  text-align: start;
+}
+
+.location {
+  font-weight: 600;
 }

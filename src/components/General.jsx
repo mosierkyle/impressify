@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import '../styles/General.css';
 
 function General({ formData, setFormData }) {
@@ -55,14 +55,16 @@ function General({ formData, setFormData }) {
 
   return (
     <div className="general">
-      {/* <Helmet>
+      <Helmet>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
         />
-      </Helmet> */}
+      </Helmet>
       <div className="header-group">
-        <h2 className="header">General Information</h2>
+        <h2 className="header">
+          <i className="fa-solid fa-user"></i> General Information
+        </h2>
         {downUp == 0 ? (
           <img
             src="https://rmathr.github.io/cv-project/d529ba3bd8a0c3f53ac7.png"

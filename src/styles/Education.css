@@ -67,7 +67,7 @@
 
 .button:hover {
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .expand-icon {
@@ -78,19 +78,21 @@
   width: fit-content;
 }
 
-/* .editBtn {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .editSVG {
-    height: 0px;
-    width: 3px;
-    transform: scale(0.75);
-  } */
+.editBtn {
+  background-color: white;
+  color: gray;
+  border: none;
+  transform: scale(1.6);
+  padding: 0px 0px;
+}
+
+.editBtn:hover {
+  color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
 
 .editSchool {
-  margin: 0;
+  margin-top: 0px;
 }
 
 .educations {
@@ -100,7 +102,7 @@
   background-color: white;
   width: 100%;
   height: fit-content;
-  padding: 20px;
+  padding: 25.25px 20px;
   margin-top: 5px;
   align-items: center;
   border-radius: 10px;
@@ -117,7 +119,7 @@
   background-color: white;
   width: 100%;
   height: fit-content;
-  padding: 20px;
+  padding: 16.25px 20px;
   margin-top: 5px;
   align-items: center;
   /* border-bottom-left-radius: 10px;
@@ -130,7 +132,14 @@
   background-color: gray;
   color: white;
   padding: 10px 15px;
-  border-radius: 25px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.add-education-button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
 
 .education-content {
@@ -138,4 +147,9 @@
   flex-direction: column;
   gap: 0;
   margin-top: 0;
+}
+
+.fa-solid,
+.fas {
+  transform: scale(0.8);
 }

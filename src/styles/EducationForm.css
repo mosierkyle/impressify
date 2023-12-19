@@ -41,19 +41,41 @@
   margin-top: 10px;
   border: none;
   padding: 7.5px 12.5px;
-  background-color: #f08080;
+  background-color: gray;
   color: white;
-  border-radius: 15px;
+  border-radius: 5px;
   font-weight: 400;
   font-size: 14px;
 }
 
 .button-div {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.rightButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
 .button:hover {
   cursor: pointer;
-  background-color: rgba(240, 128, 128, 0.8);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.deleteBtn {
+  border: none;
+  background-color: white;
+  color: gray;
+  padding: 0px 0px;
+  transform: scale(1.6);
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.deleteBtn:hover {
+  color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }

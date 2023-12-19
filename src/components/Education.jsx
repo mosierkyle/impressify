@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../styles/Education.css';
 import EducationForm from './Forms/EducationForm';
+import { Helmet } from 'react-helmet';
 
 export default function Education({ formData, setFormData }) {
   let [downUp, setDownUp] = useState({ form: 0, schools: 0 });
@@ -25,8 +26,16 @@ export default function Education({ formData, setFormData }) {
 
   return (
     <div className="education">
+      <Helmet>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        />
+      </Helmet>
       <div className="education-header-group">
-        <h2 className="header">Education</h2>
+        <h2 className="header">
+          <i className="icon fa-solid fa-graduation-cap"></i> Education
+        </h2>
         {downUp.schools == 1 || downUp.form == 1 ? (
           <img
             src="https://rmathr.github.io/cv-project/d529ba3bd8a0c3f53ac7.png"
@@ -56,11 +65,8 @@ export default function Education({ formData, setFormData }) {
             return (
               <div key={school.name} className="educations">
                 <h5 className="school-title">{school.name}</h5>
-                <button
-                  className="button editBtn editSchool"
-                  onClick={() => handleEdit(index)}
-                >
-                  Edit
+                <button className="editBtn" onClick={() => handleEdit(index)}>
+                  <i className="fa-sharp fa-solid fa-pen-to-square"></i>
                 </button>
               </div>
             );

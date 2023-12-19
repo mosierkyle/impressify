@@ -86,3 +86,8 @@
   width: 3px;
   transform: scale(0.75);
 } */
+
+.fa-solid,
+.fas {
+  transform: scale(0.8);
+}
