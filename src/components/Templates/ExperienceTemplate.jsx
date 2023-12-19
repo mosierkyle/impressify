@@ -1,25 +1,26 @@
-import '/Users/kylemosier/repos/CV-application/src/styles/educationTemplate.css';
+import '/Users/kylemosier/repos/CV-application/src/styles/experienceTemplate.css';
 
-export default function EducationTemplate({ formData }) {
+export default function ExperienceTemplate({ formData }) {
   return (
-    <div className="education-template">
-      {formData.education.length > 0 && (
-        <div className="education-header">
+    <div className="experience-template">
+      {formData.experiences.length > 0 && (
+        <div className="experience-header">
           <h3>Education</h3>
         </div>
       )}
-      <div className="education-template-content">
-        {formData.education.map((school) => {
+      <div className="experience-template-content">
+        {formData.experiences.map((experience) => {
           return (
-            <div key={school.name} className="school">
+            <div key={experience.role} className="experience">
               <div className="left">
-                <p className="school-name">{school.name}</p>
-                <p className="study">{school.major}</p>
+                <p className="role">{experience.role}</p>
+                <p className="company">{experience.company}</p>
+                <p className="details">{experience.details}</p>
               </div>
               <div className="right">
-                <p className="location">{school.location}</p>
+                <p className="location">{experience.location}</p>
                 <p className="time">
-                  {school.start} - {school.end}
+                  {experience.start} - {experience.end}
                 </p>
               </div>
             </div>

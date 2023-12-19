@@ -32,6 +32,29 @@ function App() {
     ],
   });
 
+  const [experienceFormData, setExperienceFormData] = useState({
+    education: [
+      {
+        role: 'Front-End Web Developer',
+        company: 'Bixby Agency',
+        details:
+          'Cofounded Web Development Agency working for 5+ local clients. Deployed Web Flow to engineer the UI and UX for clientele websites',
+        start: 'June 2022',
+        end: 'Present',
+        location: 'San Luis Obispo, CA',
+      },
+      {
+        role: 'Restaurant Server',
+        company: 'Hula Boy Charboil',
+        details:
+          'Implemented a welcoming and positive environment to make diners and guests feel at home. Maintained an extensive knowledge of 100+ food and drink items to proactively up-sell the menu',
+        start: 'May 2021',
+        end: 'September 2021',
+        location: 'Vancouver, WA',
+      },
+    ],
+  });
+
   return (
     <div className="app">
       <div className="edit">

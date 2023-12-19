@@ -6,61 +6,72 @@ export default function EducationForm({
   setFormData,
   downUp,
   setDownUp,
-  currentSchool,
+  currentExperience,
 }) {
-  const [schoolName, setSchoolName] = useState(
-    currentSchool != formData.education.length
-      ? formData.education[currentSchool].name
+  const [experienceRole, setExperienceRole] = useState(
+    currentExperience != formData.experience.length
+      ? formData.experience[currentExperience].role
       : ''
   );
-  const [schoolMajor, setSchoolMajor] = useState(
-    currentSchool != formData.education.length
-      ? formData.education[currentSchool].major
+  const [experienceCompany, setExperienceCompany] = useState(
+    currentExperience != formData.experience.length
+      ? formData.experience[currentExperience].company
       : ''
   );
-  const [schoolStart, setSchoolStart] = useState(
-    currentSchool != formData.education.length
-      ? formData.education[currentSchool].start
-      : ''
-  );
-  const [schoolEnd, setSchoolEnd] = useState(
-    currentSchool != formData.education.length
-      ? formData.education[currentSchool].end
-      : ''
-  );
-  const [schoolLocation, setSchoolLocation] = useState(
-    currentSchool != formData.education.length
-      ? formData.education[currentSchool].location
+  const [experienceDetails, setExperienceDetails] = useState(
+    currentExperience != formData.experience.length
+      ? formData.experience[currentExperience].details
       : ''
   );
 
-  function handleSchoolName(e) {
-    setSchoolName(e.target.value);
+  const [experienceStart, setExperienceStart] = useState(
+    currentExperience != formData.experience.length
+      ? formData.experience[currentExperience].start
+      : ''
+  );
+  const [experienceEnd, setExperienceEnd] = useState(
+    currentExperience != formData.experience.length
+      ? formData.experience[currentExperience].end
+      : ''
+  );
+  const [experienceLocation, setExperienceLocation] = useState(
+    currentExperience != formData.education.length
+      ? formData.experience[currentExperience].location
+      : ''
+  );
+
+  function handleExperienceName(e) {
+    setExperienceRole(e.target.value);
   }
 
-  function handleSchoolMajor(e) {
-    setSchoolMajor(e.target.value);
+  function handleExperienceCompany(e) {
+    setExperienceCompany(e.target.value);
   }
 
-  function handleSchoolStart(e) {
-    setSchoolStart(e.target.value);
+  function handleExperienceDetails(e) {
+    setExperienceDetails(e.target.value);
   }
 
-  function handleSchoolEnd(e) {
-    setSchoolEnd(e.target.value);
+  function handleExperienceStart(e) {
+    setExperienceStart(e.target.value);
   }
-  function handleSchoolLocation(e) {
-    setSchoolLocation(e.target.value);
+
+  function handleExperienceEnd(e) {
+    setExperienceEnd(e.target.value);
+  }
+  function handleExperienceLocation(e) {
+    setExperienceLocation(e.target.value);
   }
 
   function handleSave() {
-    const updatedEducation = [...formData.education];
-    updatedEducation[currentSchool] = {
-      name: schoolName,
-      major: schoolMajor,
-      start: schoolStart,
-      end: schoolEnd,
-      location: schoolLocation,
+    const updatedExperience = [...formData.education];
+    updatedEexperience[currentExperience] = {
+      role: experienceRole,
+      company: experienceRole,
+      details: experienceDetails,
+      start: experienceStart,
+      end: End,
+      location: lLocation,
     };
     setFormData({ ...formData, education: updatedEducation });
     setSchoolName('');
@@ -68,23 +79,23 @@ export default function EducationForm({
     setSchoolEnd('');
     setSchoolStart('');
     setSchoolLocation('');
-    setDownUp({ schools: downUp.schools + 1, form: downUp.form - 1 });
+    setDownUp({ ...downUp, form: downUp.form - 1 });
   }
 
   function handleCancel() {
-    setDownUp({ schools: downUp.schools + 1, form: downUp.form - 1 });
+    setDownUp({ ...downUp, form: downUp.form - 1 });
   }
 
   function handleDelete() {
-    if (formData.education.length === 1) {
+    if (currentSchool != 0) {
+      const updatedEducation = [...formData.education];
       setFormData({
-        education: [],
+        ...formData,
+        education: updatedEducation.splice(currentSchool, 1),
       });
     } else {
-      const updatedEducation = [...formData.education];
-      updatedEducation.splice(currentSchool, 1);
       setFormData({
-        education: updatedEducation,
+        education: [],
       });
     }
     setDownUp({ schools: downUp.schools + 1, form: downUp.form - 1 });
