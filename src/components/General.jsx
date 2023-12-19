@@ -117,7 +117,7 @@ function General({ formData, setFormData }) {
               onChange={handleAddress}
             />
           </div>
-          <div className="button-div">
+          <div className="button-general-div">
             {editSave == 0 && (
               <button className="button" onClick={handleSave}>
                 Save

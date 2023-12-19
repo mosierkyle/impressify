@@ -58,7 +58,7 @@
   background-color: black;
 }
 
-.button-div {
+.button-general-div {
   display: flex;
   justify-content: end;
 }

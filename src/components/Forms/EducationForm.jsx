@@ -87,7 +87,7 @@ export default function EducationForm({
         education: [],
       });
     }
-    setDownUp({ ...downUp, form: downUp.form - 1 });
+    setDownUp({ schools: downUp.schools + 1, form: downUp.form - 1 });
   }
 
   return (
