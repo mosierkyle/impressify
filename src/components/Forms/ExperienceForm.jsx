@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '/Users/kylemosier/repos/CV-application/src/styles/ExperienceForm.css';
 
-export default function EducationForm({
+export default function ExperienceForm({
   formData,
   setFormData,
   downUp,
@@ -35,12 +35,12 @@ export default function EducationForm({
       : ''
   );
   const [experienceLocation, setExperienceLocation] = useState(
-    currentExperience != formData.education.length
+    currentExperience != formData.experience.length
       ? formData.experience[currentExperience].location
       : ''
   );
 
-  function handleExperienceName(e) {
+  function handleExperienceRole(e) {
     setExperienceRole(e.target.value);
   }
 
@@ -64,61 +64,71 @@ export default function EducationForm({
   }
 
   function handleSave() {
-    const updatedExperience = [...formData.education];
-    updatedEexperience[currentExperience] = {
+    const updatedExperience = [...formData.experience];
+    updatedExperience[currentExperience] = {
       role: experienceRole,
-      company: experienceRole,
+      company: experienceCompany,
       details: experienceDetails,
       start: experienceStart,
-      end: End,
-      location: lLocation,
+      end: experienceEnd,
+      location: experienceLocation,
     };
-    setFormData({ ...formData, education: updatedEducation });
-    setSchoolName('');
-    setSchoolMajor('');
-    setSchoolEnd('');
-    setSchoolStart('');
-    setSchoolLocation('');
-    setDownUp({ ...downUp, form: downUp.form - 1 });
+    setFormData({ ...formData, experience: updatedExperience });
+    setExperienceRole('');
+    setExperienceCompany('');
+    setExperienceDetails('');
+    setExperienceEnd('');
+    setExperienceStart('');
+    setExperienceLocation('');
+    setDownUp({ experiences: downUp.experiences + 1, form: downUp.form - 1 });
   }
 
   function handleCancel() {
-    setDownUp({ ...downUp, form: downUp.form - 1 });
+    setDownUp({ experiences: downUp.experiences + 1, form: downUp.form - 1 });
   }
 
   function handleDelete() {
-    if (currentSchool != 0) {
-      const updatedEducation = [...formData.education];
+    if (formData.experience.length === 1) {
       setFormData({
-        ...formData,
-        education: updatedEducation.splice(currentSchool, 1),
+        experience: [],
       });
     } else {
+      const updatedExperience = [...formData.experience];
+      updatedExperience.splice(currentExperience, 1);
       setFormData({
-        education: [],
+        experience: updatedExperience,
       });
     }
-    setDownUp({ schools: downUp.schools + 1, form: downUp.form - 1 });
+    setDownUp({ experiences: downUp.experiences + 1, form: downUp.form - 1 });
   }
 
   return (
-    <form className="education-form" onSubmit={(e) => e.preventDefault()}>
+    <form className="experience-form" onSubmit={(e) => e.preventDefault()}>
       <div className="input-group">
-        <label className="input-label">School</label>
+        <label className="input-label">Role</label>
         <input
           className="input"
-          placeholder="Enter School / University"
-          value={schoolName}
-          onChange={handleSchoolName}
+          placeholder="Enter Role"
+          value={experienceRole}
+          onChange={handleExperienceRole}
         />
       </div>
       <div className="input-group">
-        <label className="input-label">Degree</label>
+        <label className="input-label">Company</label>
         <input
           className="input"
-          placeholder="Enter Degree / Field of Study"
-          value={schoolMajor}
-          onChange={handleSchoolMajor}
+          placeholder="Enter Company Name"
+          value={experienceCompany}
+          onChange={handleExperienceCompany}
+        />
+      </div>
+      <div className="input-group">
+        <label className="input-label">Details</label>
+        <input
+          className="input"
+          placeholder="Enter Details"
+          value={experienceDetails}
+          onChange={handleExperienceDetails}
         />
       </div>
       <div className="input-group">
@@ -126,8 +136,8 @@ export default function EducationForm({
         <input
           className="input"
           placeholder="Enter Start Date"
-          value={schoolStart}
-          onChange={handleSchoolStart}
+          value={experienceStart}
+          onChange={handleExperienceStart}
         />
       </div>
       <div className="input-group">
@@ -135,8 +145,8 @@ export default function EducationForm({
         <input
           placeholder="Enter End Date"
           className="input"
-          value={schoolEnd}
-          onChange={handleSchoolEnd}
+          value={experienceEnd}
+          onChange={handleExperienceEnd}
         />
       </div>
       <div className="input-group">
@@ -144,8 +154,8 @@ export default function EducationForm({
         <input
           placeholder="Enter Location"
           className="input"
-          value={schoolLocation}
-          onChange={handleSchoolLocation}
+          value={experienceLocation}
+          onChange={handleExperienceLocation}
         />
       </div>
       <div className="button-div">

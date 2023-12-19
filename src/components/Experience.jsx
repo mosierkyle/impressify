@@ -4,7 +4,7 @@ import ExperienceForm from './Forms/ExperienceForm';
 import { Helmet } from 'react-helmet';
 
 export default function Experience({ formData, setFormData }) {
-  let [downUp, setDownUp] = useState({ form: 0, experiences: 1 });
+  let [downUp, setDownUp] = useState({ form: 0, experiences: 0 });
   let [currentExperience, setCurrentExperience] = useState('');
 
   function handleEdit(index) {
