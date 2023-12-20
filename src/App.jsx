@@ -12,9 +12,9 @@ import General from './components/General';
 function App() {
   const [generalFormData, setGeneralFormData] = useState({
     fullName: 'Kyle Mosier',
-    email: 'mosierkyle@gmail.com',
-    phone: '3605978103',
-    address: '5908 NW 38th Ave #217',
+    email: 'kylemosier@email.com',
+    phone: '4159098537',
+    address: 'Somewhere SW 99th ave',
   });
 
   const [educationFormData, setEducationFormData] = useState({
