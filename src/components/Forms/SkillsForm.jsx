@@ -18,7 +18,7 @@ export default function SkillsForm({
 
   function handleSave() {
     const updatedSkills = [...formData.skills];
-    updatedSkills[currentSkill] = { skillName };
+    updatedSkills[currentSkill] = skillName;
     setFormData({ skills: updatedSkills });
     setSkillName('');
     setDownUp({ skills: downUp.skills + 1, form: downUp.form - 1 });
@@ -29,7 +29,7 @@ export default function SkillsForm({
   }
 
   function handleDelete() {
-    if (formData.education.length === 1) {
+    if (formData.skills.length === 1) {
       setFormData({
         skills: [],
       });
