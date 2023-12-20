@@ -27,7 +27,7 @@ function App() {
         location: 'San Luis Obispo, CA',
       },
       {
-        name: 'UW',
+        name: 'University of Washington',
         major: 'Masters in Computer Science',
         start: 'September 2024',
         end: 'Present',
