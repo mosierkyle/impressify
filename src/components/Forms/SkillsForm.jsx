@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '/Users/kylemosier/repos/CV-application/src/styles/SkillsForm.css';
+import '../../styles/SkillsForm.css';
 
 export default function SkillsForm({
   formData,

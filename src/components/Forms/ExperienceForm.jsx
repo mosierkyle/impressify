@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '/Users/kylemosier/repos/CV-application/src/styles/ExperienceForm.css';
+import '../../styles/ExperienceForm.css';
 
 export default function ExperienceForm({
   formData,

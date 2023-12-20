@@ -1,4 +1,4 @@
-import '/Users/kylemosier/repos/CV-application/src/styles/SkillsTemplate.css';
+import '../../styles/SkillsTemplate.css';
 
 export default function SkillsTemplate({ formData }) {
   return (

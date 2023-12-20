@@ -1,4 +1,4 @@
-import '/Users/kylemosier/repos/CV-application/src/styles/experienceTemplate.css';
+import '../../styles/experienceTemplate.css';
 
 export default function ExperienceTemplate({ formData }) {
   return (

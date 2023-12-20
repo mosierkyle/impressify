@@ -1,4 +1,4 @@
-import '/Users/kylemosier/repos/CV-application/src/styles/educationTemplate.css';
+import '../../styles/educationTemplate.css';
 
 export default function EducationTemplate({ formData }) {
   return (

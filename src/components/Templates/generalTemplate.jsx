@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet';
-import '/Users/kylemosier/repos/CV-application/src/styles/generalTemplate.css';
+import '../../styles/generalTemplate.css';
 
 export default function GeneralTemplate({ formData }) {
   return (
