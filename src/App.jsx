@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import './styles/App.css';
-import General from './components/General';
 import GeneralTemplate from './components/Templates/generalTemplate';
 import EducationTemplate from './components/Templates/EducationTemplate';
 import ExperienceTemplate from './components/Templates/ExperienceTemplate';
+import SkillsTemplate from './components/Templates/SkillsTemplate';
 import Education from './components/Education';
 import Experience from './components/Experience';
+// import Skills from './components/Skills';
+import General from './components/General';
 
 function App() {
   const [generalFormData, setGeneralFormData] = useState({
@@ -57,6 +59,27 @@ function App() {
     ],
   });
 
+  const [skillsFormData, setSkillsFormData] = useState({
+    skills: [
+      'JavaScript',
+      'React',
+      'HTML',
+      'CSS',
+      'Git',
+      'Node',
+      'Express',
+      'MongoDB',
+      'Jest',
+      'Data Communications and Networking',
+      'Database Management',
+      'Aviation',
+      'Communication',
+      'Customer Service',
+      'Sales',
+      'Leadership',
+    ],
+  });
+
   return (
     <div className="app">
       <div className="edit">
@@ -72,12 +95,16 @@ function App() {
           formData={experienceFormData}
           setFormData={setExperienceFormData}
         ></Experience>
+        {/* <Skills
+        formData={skillsFormData}
+        setFormData={setSkillsFormData}></Skills> */}
       </div>
 
       <div className="resume">
         <GeneralTemplate formData={generalFormData}></GeneralTemplate>
         <EducationTemplate formData={educationFormData}></EducationTemplate>
         <ExperienceTemplate formData={experienceFormData}></ExperienceTemplate>
+        <SkillsTemplate formData={skillsFormData}></SkillsTemplate>
       </div>
     </div>
   );

@@ -1,48 +1,48 @@
 import { useState } from 'react';
-import '../styles/Experience.css';
-import ExperienceForm from './Forms/ExperienceForm';
+import '../styles/Skills.css';
+import SkillsForm from './Forms/SkillForm';
 import { Helmet } from 'react-helmet';
 
-export default function Experience({ formData, setFormData }) {
-  let [downUp, setDownUp] = useState({ form: 0, experiences: 0 });
-  let [currentExperience, setCurrentExperience] = useState('');
+export default function Skills({ formData, setFormData }) {
+  let [downUp, setDownUp] = useState({ form: 0, skills: 0 });
+  let [currentSkill, setCurrentSkill] = useState('');
 
   function handleEdit(index) {
-    setCurrentExperience(index);
+    setCurrentSkill(index);
     downUp.form == 1
       ? setDownUp({
-          experiences: downUp.experiences + 1,
+          skills: downUp.skills + 1,
           form: downUp.form - 1,
         })
       : setDownUp({
-          experiences: downUp.experiences - 1,
+          skills: downUp.skills - 1,
           form: downUp.form + 1,
         });
   }
 
   function handleDownUp() {
-    if (downUp.experiences == 0 && downUp.form == 1) {
+    if (downUp.skills == 0 && downUp.form == 1) {
       setDownUp({ ...downUp, form: downUp.form - 1 });
-    } else if (downUp.experiences == 0 && downUp.form == 0) {
-      setDownUp({ ...downUp, experiences: downUp.experiences + 1 });
-    } else if (downUp.experiences == 1 && downUp.form == 0) {
-      setDownUp({ ...downUp, experiences: downUp.experiences - 1 });
+    } else if (downUp.skills == 0 && downUp.form == 0) {
+      setDownUp({ ...downUp, skills: downUp.skills + 1 });
+    } else if (downUp.skills == 1 && downUp.form == 0) {
+      setDownUp({ ...downUp, skills: downUp.skills - 1 });
     }
   }
 
   return (
-    <div className="experience">
+    <div className="skill">
       <Helmet>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
         />
       </Helmet>
-      <div className="experience-header-group">
+      <div className="skill-header-group">
         <h2 className="header">
-          <i className="fa-solid fa-briefcase"></i> Experience
+          <i className="fa-solid fa-briefcase"></i> Skill
         </h2>
-        {downUp.experiences == 1 || downUp.form == 1 ? (
+        {downUp.skills == 1 || downUp.form == 1 ? (
           <img
             src="https://rmathr.github.io/cv-project/d529ba3bd8a0c3f53ac7.png"
             className="expand-icon"
@@ -57,32 +57,32 @@ export default function Experience({ formData, setFormData }) {
         )}
       </div>
       {downUp.form == 1 && (
-        <ExperienceForm
+        <SkillForm
           formData={formData}
           setFormData={setFormData}
           downUp={downUp}
           setDownUp={setDownUp}
-          currentExperience={currentExperience}
-        ></ExperienceForm>
+          currentSkill={currentSkill}
+        ></SkillForm>
       )}
-      {downUp.experiences == 1 && (
-        <div className="experience-content">
-          {formData.experience.map((experience, index) => {
+      {downUp.skills == 1 && (
+        <div className="skill-content">
+          {formData.skills.map((skill, index) => {
             return (
-              <div key={experience.role} className="experiences">
-                <h5 className="experience-title">{experience.role}</h5>
+              <div key={skill.role} className="skills">
+                <h5 className="skill-title">{skill.role}</h5>
                 <button className="editBtn" onClick={() => handleEdit(index)}>
                   <i className="fa-sharp fa-solid fa-pen-to-square"></i>
                 </button>
               </div>
             );
           })}
-          <div className="add-experience">
+          <div className="add-skill">
             <button
-              className="add-experience-button"
-              onClick={() => handleEdit(formData.experience.length)}
+              className="add-skill-button"
+              onClick={() => handleEdit(formData.skills.length)}
             >
-              + Experience
+              + Skill
             </button>
           </div>
         </div>
