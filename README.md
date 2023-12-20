@@ -7,4 +7,4 @@ Live-Demo:
 https://resume-helper-33t13pr8t-mosierkyles-projects.vercel.app/
 
 Preview:
-![preview](/Users/kylemosier/repos/CV-application/src/assets/Preview.png)
+![preview](src/assets/Preview.png)
