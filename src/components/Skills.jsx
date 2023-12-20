@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../styles/Skills.css';
-import SkillsForm from './Forms/SkillForm';
+import SkillsForm from './Forms/SkillsForm';
 import { Helmet } from 'react-helmet';
 
 export default function Skills({ formData, setFormData }) {
@@ -40,7 +40,7 @@ export default function Skills({ formData, setFormData }) {
       </Helmet>
       <div className="skill-header-group">
         <h2 className="header">
-          <i className="fa-solid fa-briefcase"></i> Skill
+          <i className="fa-solid fa-lightbulb"></i> Skills
         </h2>
         {downUp.skills == 1 || downUp.form == 1 ? (
           <img
@@ -57,20 +57,20 @@ export default function Skills({ formData, setFormData }) {
         )}
       </div>
       {downUp.form == 1 && (
-        <SkillForm
+        <SkillsForm
           formData={formData}
           setFormData={setFormData}
           downUp={downUp}
           setDownUp={setDownUp}
           currentSkill={currentSkill}
-        ></SkillForm>
+        ></SkillsForm>
       )}
       {downUp.skills == 1 && (
         <div className="skill-content">
           {formData.skills.map((skill, index) => {
             return (
-              <div key={skill.role} className="skills">
-                <h5 className="skill-title">{skill.role}</h5>
+              <div key={skill} className="skills">
+                <h5 className="skill-title">{skill}</h5>
                 <button className="editBtn" onClick={() => handleEdit(index)}>
                   <i className="fa-sharp fa-solid fa-pen-to-square"></i>
                 </button>

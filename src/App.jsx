@@ -6,7 +6,7 @@ import ExperienceTemplate from './components/Templates/ExperienceTemplate';
 import SkillsTemplate from './components/Templates/SkillsTemplate';
 import Education from './components/Education';
 import Experience from './components/Experience';
-// import Skills from './components/Skills';
+import Skills from './components/Skills';
 import General from './components/General';
 
 function App() {
@@ -70,8 +70,8 @@ function App() {
       'Express',
       'MongoDB',
       'Jest',
-      'Data Communications and Networking',
       'Database Management',
+      'Data Communications and Networking',
       'Aviation',
       'Communication',
       'Customer Service',
@@ -95,9 +95,10 @@ function App() {
           formData={experienceFormData}
           setFormData={setExperienceFormData}
         ></Experience>
-        {/* <Skills
-        formData={skillsFormData}
-        setFormData={setSkillsFormData}></Skills> */}
+        <Skills
+          formData={skillsFormData}
+          setFormData={setSkillsFormData}
+        ></Skills>
       </div>
 
       <div className="resume">
