@@ -3,11 +3,18 @@ import { Helmet } from 'react-helmet';
 import '../styles/General.css';
 
 function General({ formData, setFormData }) {
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [address, setAddress] = useState('');
-  let [editSave, setEditSave] = useState('0');
+  const [fullName, setFullName] = useState(
+    formData.fullName ? formData.fullName : ''
+  );
+
+  const [email, setEmail] = useState(formData.email ? formData.email : '');
+
+  const [phone, setPhone] = useState(formData.phone ? formData.phone : '');
+
+  const [address, setAddress] = useState(
+    formData.address ? formData.address : ''
+  );
+
   let [downUp, setDownUp] = useState(0);
 
   function handleFullName(e) {
@@ -27,27 +34,25 @@ function General({ formData, setFormData }) {
   }
 
   function handleSave() {
-    setEditSave((editSave += 1));
-    setDownUp((downUp += 1));
     setFormData({
       fullName: fullName,
       email: email,
       phone: phone,
       address: address,
     });
-    setFullName('');
-    setEmail('');
-    setPhone('');
-    setAddress('');
+    // setFullName('');
+    // setEmail('');
+    // setPhone('');
+    // setAddress('');
   }
 
-  function handleEdit() {
-    setEditSave((editSave -= 1));
-    setFullName(formData.fullName);
-    setEmail(formData.email);
-    setPhone(formData.phone);
-    setAddress(formData.address);
-  }
+  // function handleEdit() {
+  //   setEditSave((editSave -= 1));
+  //   setFullName(formData.fullName);
+  //   setEmail(formData.email);
+  //   setPhone(formData.phone);
+  //   setAddress(formData.address);
+  // }
 
   function handleDownUp(e) {
     downUp == 1 ? setDownUp(downUp - 1) : setDownUp(downUp + 1);
@@ -118,17 +123,9 @@ function General({ formData, setFormData }) {
             />
           </div>
           <div className="button-general-div">
-            {editSave == 0 && (
-              <button className="button" onClick={handleSave}>
-                Save
-              </button>
-            )}
-            {editSave == 1 && (
-              <button className="button editBtn" onClick={handleEdit}>
-                Edit
-                {/* <span className="editSVG material-symbols-outlined">edit</span> */}
-              </button>
-            )}
+            <button className="button" onClick={handleSave}>
+              Save
+            </button>
           </div>
         </form>
       )}

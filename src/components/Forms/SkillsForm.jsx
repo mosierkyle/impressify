@@ -9,13 +9,11 @@ export default function SkillsForm({
   currentSkill,
 }) {
   const [skillName, setSkillName] = useState(
-    currentSkill != formData.skills.length
-      ? formData.education[currentSchool].name
-      : ''
+    currentSkill != formData.skills.length ? formData.skills[currentSkill] : ''
   );
 
   function handleSkillName(e) {
-    setSkilllName(e.target.value);
+    setSkillName(e.target.value);
   }
 
   function handleSave() {

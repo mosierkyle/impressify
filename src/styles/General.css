@@ -55,7 +55,7 @@
   color: white;
   border-radius: 5px;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .button-general-div {
@@ -77,14 +77,8 @@
 }
 
 .editBtn {
-  margin-top: 10px;
-  border: none;
-  padding: 7.5px 12.5px;
-  background-color: gray;
-  color: white;
-  border-radius: 5px;
-  font-weight: 400;
-  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .editSVG {
