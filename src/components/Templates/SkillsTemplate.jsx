@@ -9,7 +9,7 @@ export default function SkillsTemplate({ formData }) {
         </div>
       )}
       <div className="skills-template-content">
-        <p className="skills-intro">Technical: </p>
+        {formData.skills.length > 0 && <p className="skills-intro">Skills</p>}
         <div className="skills-div">
           {formData.skills.map((skill, index) => {
             return (

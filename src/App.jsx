@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/App.css';
 import GeneralTemplate from './components/Templates/generalTemplate';
 import EducationTemplate from './components/Templates/EducationTemplate';
@@ -8,8 +8,10 @@ import Education from './components/Education';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import General from './components/General';
+import ResumePDFGenerator from './components/Download';
 
 function App() {
+  const [resume, setResume] = useState('');
   const [generalFormData, setGeneralFormData] = useState({
     fullName: 'Kyle Mosier',
     email: 'kylemosier@email.com',
@@ -59,6 +61,11 @@ function App() {
     ],
   });
 
+  useEffect(() => {
+    const resumeSection = document.querySelector('.resume');
+    setResume(resumeSection);
+  }, []);
+
   const [skillsFormData, setSkillsFormData] = useState({
     skills: [
       'JavaScript',
@@ -83,6 +90,13 @@ function App() {
   return (
     <div className="app">
       <div className="edit">
+        <ResumePDFGenerator
+          setGeneral={setGeneralFormData}
+          setEducation={setEducationFormData}
+          setExperience={setExperienceFormData}
+          setSkills={setSkillsFormData}
+          resumeSection={resume}
+        ></ResumePDFGenerator>
         <General
           formData={generalFormData}
           setFormData={setGeneralFormData}
