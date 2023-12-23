@@ -29,11 +29,11 @@ function App() {
         location: 'San Luis Obispo, CA',
       },
       {
-        name: 'University of Washington',
-        major: 'Masters in Computer Science',
-        start: 'September 2024',
+        name: 'Private Pilots License',
+        major: 'FAA - Aviation',
+        start: 'April 2022',
         end: 'Present',
-        location: 'Seattle, WA',
+        location: 'San Luis Obispo, CA',
       },
     ],
   });
