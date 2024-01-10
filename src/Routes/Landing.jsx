@@ -22,13 +22,14 @@ const Landing = () => {
       <div className="landing-content">
         <div className="hero-text">
           <h1 className="hero-title">
-            Unleash the Power of <span>Your</span> Story
+            Unleash the Power of <span className="your">Your</span> Story
           </h1>
           <p className="hero-subtitle">
-            Introducing Impressify - Your Gateway to Career Brilliance! Craft
-            stunning resumes effortlessly, where every word resonates with
-            impact, and your professional journey unfolds with the elegance it
-            deserves.{' '}
+            Introducing Your Gateway to Career Brilliance. Craft stunning
+            resumes effortlessly, where every word resonates with impact, and
+            your professional journey unfolds with the elegance it deserves.
+            Ignite your career with Impressify, where first impressions aren't
+            just made; they're mastered.
           </p>
           <Link className="cta landing-button" to="resume">
             Create Your Story

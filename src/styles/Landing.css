@@ -10,8 +10,9 @@
   justify-content: space-between;
   flex-direction: row;
   height: 75px;
-  padding: 0 30px;
-  box-shadow: 0px 4px 6px -6px rgba(0, 0, 0, 0.4);
+  padding: 10px 30px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
 }
 .landing-logo {
   align-items: center;
@@ -22,7 +23,7 @@
 
 .landing-logo p {
   font-weight: 700;
-  font-size: 26px;
+  font-size: 30px;
 }
 
 .links {
@@ -56,6 +57,7 @@
   flex-direction: row;
   padding: 0 40px;
   gap: 5%;
+  background-color: #ffffff;
 }
 
 .hero-text {
@@ -68,6 +70,10 @@
 .hero-title {
   font-size: 64px;
   margin-bottom: 2rem;
+}
+
+.your {
+  color: #2faf71;
 }
 
 .hero-subtitle {
