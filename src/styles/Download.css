@@ -21,12 +21,12 @@
 }
 
 .download-button:hover {
-  background-color: rgb(44, 165, 106);
-  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.4);
   cursor: pointer;
 }
 
 .clear-button {
+  border: none;
   border: none;
   background-color: #32bb78;
   color: #ffffff;
@@ -37,7 +37,6 @@
 }
 
 .clear-button:hover {
-  background-color: rgb(44, 165, 106);
-  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.4);
   cursor: pointer;
 }

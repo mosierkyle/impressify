@@ -53,8 +53,8 @@
   margin-top: 10px;
   border: none;
   padding: 7.5px 12.5px;
-  background-color: #32bb78;
-  color: #ffffff;
+  background-color: gray;
+  color: white;
   border-radius: 5px;
   font-weight: 400;
   font-size: 14px;
@@ -66,9 +66,8 @@
 }
 
 .button:hover {
-  background-color: rgb(44, 165, 106);
-  color: #ffffff;
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .expand-icon {
@@ -80,16 +79,15 @@
 }
 
 .editBtn {
-  color: #32bb78;
-  background-color: #ffffff;
+  background-color: white;
+  color: gray;
   border: none;
   transform: scale(1.6);
   padding: 0px 0px;
 }
 
 .editBtn:hover {
-  color: rgb(44, 165, 106);
-  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.4);
   cursor: pointer;
 }
 
@@ -131,8 +129,8 @@
 
 .add-skill-button {
   border: none;
-  background-color: #32bb78;
-  color: #ffffff;
+  background-color: gray;
+  color: white;
   padding: 10px 15px;
   border-radius: 5px;
   font-size: 14px;
@@ -140,8 +138,7 @@
 }
 
 .add-skill-button:hover {
-  background-color: rgb(44, 165, 106);
-  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.4);
   cursor: pointer;
 }
 
