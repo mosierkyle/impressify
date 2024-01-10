@@ -13,7 +13,9 @@ const Landing = () => {
           <ul className="nav-links">
             <li className="nav-link">Blog</li>
             <li className="nav-link"> Log in</li>
-            <li className="nav-link button">Get Started</li>
+            <Link to="resume" className="nav-link landing-button">
+              Get Started
+            </Link>
           </ul>
         </div>
       </div>
@@ -28,12 +30,12 @@ const Landing = () => {
             impact, and your professional journey unfolds with the elegance it
             deserves.{' '}
           </p>
-          <Link className="cta button" to="resume">
+          <Link className="cta landing-button" to="resume">
             Create Your Story
           </Link>
         </div>
-        <div className="hero-img">
-          <img src={hero} alt="hero-img" />
+        <div className="hero-img-div">
+          <img className="hero-img" src={hero} alt="hero-img" />
         </div>
       </div>
     </div>

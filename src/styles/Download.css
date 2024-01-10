@@ -12,8 +12,8 @@
 
 .download-button {
   border: none;
-  background-color: gray;
-  color: white;
+  background-color: #32bb78;
+  color: #ffffff;
   padding: 7.5px 12.5px;
   font-size: 14px;
   border-radius: 5px;
@@ -21,14 +21,15 @@
 }
 
 .download-button:hover {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgb(44, 165, 106);
+  color: #ffffff;
   cursor: pointer;
 }
 
 .clear-button {
   border: none;
-  background-color: gray;
-  color: white;
+  background-color: #32bb78;
+  color: #ffffff;
   padding: 7.5px 12.5px;
   font-size: 14px;
   border-radius: 5px;
@@ -36,6 +37,7 @@
 }
 
 .clear-button:hover {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgb(44, 165, 106);
+  color: #ffffff;
   cursor: pointer;
 }
