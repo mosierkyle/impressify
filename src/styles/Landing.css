@@ -5,30 +5,6 @@
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
 }
 
-.download-button {
-  background-color: #32bb78;
-  color: #ffffff;
-}
-
-.clear-button {
-  background-color: #32bb78;
-  color: #ffffff;
-}
-
-.button {
-  background-color: #32bb78;
-  color: #ffffff;
-}
-
-.add-education-button {
-  background-color: #32bb78;
-  color: #ffffff;
-}
-
-.edit-btn {
-  color: #32bb78;
-}
-
 .landing-header {
   display: flex;
   justify-content: space-between;

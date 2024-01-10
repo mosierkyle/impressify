@@ -61,14 +61,15 @@
 }
 
 .button:hover {
+  background-color: rgb(44, 165, 106);
+  color: #ffffff;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .deleteBtn {
   border: none;
-  background-color: white;
-  color: gray;
+  color: #32bb78;
+  background-color: #ffffff;
   padding: 0px 0px;
   transform: scale(1.6);
   margin-top: 10px;
@@ -76,6 +77,6 @@
 }
 
 .deleteBtn:hover {
-  color: rgba(0, 0, 0, 0.4);
+  color: rgb(44, 165, 106);
   cursor: pointer;
 }
