@@ -1,4 +1,4 @@
-# Resume Helper
+# Impressify
 
 This is a web app that helps you create a personalized CV/Resume.
 Made with React js.
